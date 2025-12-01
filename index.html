@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Тестовая оплата СБП</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { background: #121212; color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px 20px; margin: 0; }
+    h1 { font-size: 24px; margin-bottom: 10px; }
+    p { font-size: 16px; margin-bottom: 40px; }
+    button { background: #2481cc; color: white; padding: 18px 40px; border: none; border-radius: 12px; font-size: 20px; }
+    button:active { background: #1a5fa3; }
+  </style>
+</head>
+<body>
+  <h1>Тестовая покупка</h1>
+  <p>Нажми кнопку — откроется оплата через СБП<br>(тестовая, ничего не спишется)</p>
+  <button onclick="pay()">Оплатить 100 ₽ через СБП</button>
+
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+
+    function pay() {
+      // Тестовая ссылка YooMoney с включённым СБП
+      const testLink = "https://yoomoney.ru/to/410010000000000/100?paymentType=SB";
+      // Позже заменишь 410010000000000 на свой настоящий кошелёк
+      Telegram.WebApp.openLink(testLink);
+    }
+  </script>
+</body>
+</html>
