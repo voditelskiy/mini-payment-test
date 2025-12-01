@@ -18,4 +18,19 @@
   <h1>Оплата 100 ₽</h1>
   <p>Отсканируйте QR-код любым банковским приложением<br>или нажмите кнопку ниже</p>
 
-  <img src="https://qr.nspk.ru/AD1000060002B8C8K9T8P8J8E8F8G8H8I8J8K8L8M8N8O8P8Q8R8S8T8U8V8W8X8Y8Z8?type=02&bank=100000000111&sum=10000&cur=RUB&crc=9A
+  <img src="https://qr.nspk.ru/AD1000060002B8C8K9T8P8J8E8F8G8H8I8J8K8L8M8N8O8P8Q8R8S8T8U8V8W8X8Y8Z8?type=02&bank=100000000111&sum=10000&cur=RUB&crc=9A7B" alt="QR-код СБП">
+
+  <br>
+  <button onclick="pay()">Оплатить через СБП</button>
+
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+
+    function pay() {
+      const sbpLink = "https://qr.nspk.ru/AD1000060002B8C8K9T8P8J8E8F8G8H8I8J8K8L8M8N8O8P8Q8R8S8T8U8V8W8X8Y8Z8?type=02&bank=100000000111&sum=10000&cur=RUB&crc=9A7B";
+      Telegram.WebApp.openLink(sbpLink);
+    }
+  </script>
+</body>
+</html>
